@@ -12,7 +12,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.web.servlet.WebMvcTest;
 import org.springframework.test.context.junit4.SpringRunner;
 import org.springframework.test.web.servlet.MockMvc;
-import sia.tacocloud.HomeController;
+import sia.tacocloud.web.HomeController;
 
 @RunWith(SpringRunner.class)
 @WebMvcTest(HomeController.class)
@@ -26,7 +26,7 @@ public class HomeControllerTest {
         mockMvc.perform(get("/"))
                 .andExpect(status().isOk())
                 .andExpect(view().name("home"))
-                .andExpect(content().string(           
+                .andExpect(content().string(
                         containsString("Welcome to...")));
     }
 
